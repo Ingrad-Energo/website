@@ -4,7 +4,7 @@ import { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { Building2, Factory, Flame, Wrench, Wind, CheckCircle2, AirVent } from "lucide-react"
+import { Factory, Flame, Wrench, Wind, CheckCircle2, AirVent } from "lucide-react"
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel"
 import type { CarouselApi } from "@/components/ui/carousel"
 
@@ -346,8 +346,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4 lg:px-8">
           <nav className="flex items-center justify-between h-16">
             <div className="flex items-center gap-2">
-              <Building2 className="h-8 w-8 text-primary" />
-              <span className="text-xl font-bold">INGRAD ENERGO</span>
+              <img src="/logoingrad.png" alt="INGRAD ENERGO" className="h-8 w-auto" />
             </div>
             <div className="hidden md:flex items-center gap-8">
               <Link href="#why-choose" className="text-sm font-medium hover:text-primary transition-colors">
@@ -762,8 +761,7 @@ export default function HomePage() {
           <div className="grid md:grid-cols-4 gap-8">
             <div className="md:col-span-2">
               <div className="flex items-center gap-2 mb-4">
-                <Building2 className="h-6 w-6 text-primary" />
-                <span className="text-lg font-bold">INGRAD ENERGO</span>
+                <img src="/logoingrad.png" alt="INGRAD ENERGO" className="h-6 w-auto" />
               </div>
               <p className="text-sm text-muted-foreground max-w-md">{t.footer.description}</p>
             </div>
