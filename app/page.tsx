@@ -399,29 +399,29 @@ export default function HomePage() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden">
+      <section className="relative h-[80vh] overflow-hidden flex items-center">
         <div className="absolute inset-0">
           <img
-            src="/modern-industrial-facility-with-heating-and-ventil.jpg"
+            src="/ntp.jpg"
             alt="Hero background"
-            className="w-full h-full object-cover opacity-20"
+            className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/90 to-background/95" />
+          <div className="absolute inset-0 bg-black/50" />
         </div>
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="max-w-4xl">
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6 text-balance">{t.hero.title}</h1>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl text-pretty leading-relaxed">
+            <h1 className="text-4xl lg:text-6xl font-bold mb-6 text-balance text-white">{t.hero.title}</h1>
+            <p className="text-xl text-white/90 mb-8 max-w-2xl text-pretty leading-relaxed">
               {t.hero.subtitle}
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button size="lg" className="h-12 px-8" onClick={scrollToContact}>
+              <Button size="lg" className="h-12 px-8 bg-white text-black hover:bg-white/90" onClick={scrollToContact}>
                 {t.hero.learnMore}
               </Button>
               <Button
                 size="lg"
                 variant="outline"
-                className="h-12 px-8 bg-transparent"
+                className="h-12 px-8 bg-transparent border-white text-white hover:bg-white/10"
                 onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
               >
                 {t.hero.ourProjects}
