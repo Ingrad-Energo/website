@@ -342,11 +342,11 @@ export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Navigation */}
-      <header className="fixed top-0 left-0 right-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <header className="fixed top-0 left-0 right-0 z-50 border-b bg-white">
         <div className="container mx-auto px-4 lg:px-8">
           <nav className="flex items-center justify-between h-16">
             <div className="flex items-center gap-2">
-              <img src="/logoingrad.png" alt="INGRAD ENERGO" className="h-8 w-auto" />
+              <img src="/logoingrad.png" alt="INGRAD ENERGO" className="h-10 w-auto" />
             </div>
             <div className="hidden md:flex items-center gap-8">
               <Link href="#why-choose" className="text-sm font-medium hover:text-primary transition-colors">
@@ -390,7 +390,7 @@ export default function HomePage() {
                 </Button>
               </div>
               <span className="text-sm text-muted-foreground hidden lg:inline">+381 15 893 310</span>
-              <Button size="sm" onClick={scrollToContact}>
+              <Button size="sm" className="min-w-[160px]" onClick={scrollToContact}>
                 {t.nav.contactUs}
               </Button>
             </div>
@@ -421,7 +421,7 @@ export default function HomePage() {
               <Button
                 size="lg"
                 variant="outline"
-                className="h-12 px-8 bg-transparent border-white text-white hover:bg-white/10"
+                className="h-12 px-8 bg-transparent border-white text-white hover:bg-white/20 hover:text-white"
                 onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
               >
                 {t.hero.ourProjects}
