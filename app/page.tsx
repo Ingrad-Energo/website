@@ -641,9 +641,9 @@ export default function HomePage() {
               }}
               className="w-full"
             >
-              <CarouselContent className="-ml-2 md:-ml-4">
+              <CarouselContent className="-ml-2 md:-ml-3">
                 {projects.map((project, idx) => (
-                  <CarouselItem key={idx} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/2">
+                  <CarouselItem key={idx} className="pl-2 md:pl-3 md:basis-1/2 lg:basis-1/3">
                     <Card className="overflow-hidden h-full">
                       <div className="aspect-video relative">
                         <img
@@ -652,19 +652,19 @@ export default function HomePage() {
                           className="w-full h-full object-cover"
                         />
                       </div>
-                      <div className="p-6">
-                        <div className="flex flex-wrap gap-2 mb-4">
+                      <div className="p-4">
+                        <div className="flex flex-wrap gap-1 mb-3">
                           {project.tags.map((tag, tagIdx) => (
                             <span
                               key={tagIdx}
-                              className="inline-flex items-center rounded-full border px-3 py-1 text-xs font-medium"
+                              className="inline-flex items-center rounded-full border px-2 py-0.5 text-xs font-medium"
                             >
                               {tag}
                             </span>
                           ))}
                         </div>
-                        <h3 className="text-xl font-bold mb-3">{project.title}</h3>
-                        <p className="text-muted-foreground leading-relaxed">{project.desc}</p>
+                        <h3 className="text-lg font-bold mb-2">{project.title}</h3>
+                        <p className="text-muted-foreground text-sm leading-relaxed">{project.desc}</p>
                       </div>
                     </Card>
                   </CarouselItem>
