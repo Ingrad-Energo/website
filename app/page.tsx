@@ -520,7 +520,7 @@ export default function HomePage() {
               <div className="p-8">
                 <h3 className="text-2xl font-bold mb-3">{t.services.engineering}</h3>
                 <p className="text-muted-foreground mb-4 leading-relaxed">{t.services.engineeringDesc}</p>
-                <Link href="/services/engineering">
+                <Link href="/services/consulting">
                   <Button variant="ghost" className="px-0">
                     {t.services.learnMore}
                   </Button>
@@ -535,7 +535,7 @@ export default function HomePage() {
               <div className="p-8">
                 <h3 className="text-2xl font-bold mb-3">{t.services.thermotechnical}</h3>
                 <p className="text-muted-foreground mb-4 leading-relaxed">{t.services.thermotechnicalDesc}</p>
-                <Link href="/services/steel">
+                <Link href="/services/engineering">
                   <Button variant="ghost" className="px-0">
                     {t.services.learnMore}
                   </Button>
@@ -550,7 +550,7 @@ export default function HomePage() {
               <div className="p-8">
                 <h3 className="text-2xl font-bold mb-3">{t.services.thermoEnergy}</h3>
                 <p className="text-muted-foreground mb-4 leading-relaxed">{t.services.thermoEnergyDesc}</p>
-                <Link href="/services/steel">
+                <Link href="/services/thermal-energy">
                   <Button variant="ghost" className="px-0">
                     {t.services.learnMore}
                   </Button>
