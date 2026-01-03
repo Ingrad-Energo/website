@@ -7,6 +7,7 @@ import { Card } from "@/components/ui/card"
 import { Factory, Flame, Wrench, Wind, CheckCircle2, AirVent } from "lucide-react"
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel"
 import type { CarouselApi } from "@/components/ui/carousel"
+import { certificatesData } from "@/lib/certificates-data"
 
 const translations = {
   sr: {
@@ -477,62 +478,26 @@ export default function HomePage() {
               className="w-full"
             >
               <CarouselContent className="-ml-2 md:-ml-4">
-                {/* Certificate 1 */}
-                <CarouselItem className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
-                  <Card className="p-6 bg-background h-full">
-                    <img
-                      src="/tuv-iso-9001-quality-management-certificate.jpg"
-                      alt="TUV ISO 9001"
-                      className="w-full h-auto rounded-lg mb-4"
-                    />
-                    <h4 className="text-lg font-bold text-center">
-                      ISO 9001 -{" "}
-                      {language === "sr"
-                        ? "Menadžment kvalitetom"
-                        : language === "en"
-                          ? "Quality Management"
-                          : "Qualitätsmanagement"}
-                    </h4>
-                  </Card>
-                </CarouselItem>
-
-                {/* Certificate 2 */}
-                <CarouselItem className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
-                  <Card className="p-6 bg-background h-full">
-                    <img
-                      src="/tuv-iso-14001-environmental-management-certificate.jpg"
-                      alt="TUV ISO 14001"
-                      className="w-full h-auto rounded-lg mb-4"
-                    />
-                    <h4 className="text-lg font-bold text-center">
-                      ISO 14001 -{" "}
-                      {language === "sr"
-                        ? "Zaštita životne sredine"
-                        : language === "en"
-                          ? "Environmental Management"
-                          : "Umweltmanagement"}
-                    </h4>
-                  </Card>
-                </CarouselItem>
-
-                {/* Certificate 3 */}
-                <CarouselItem className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
-                  <Card className="p-6 bg-background h-full">
-                    <img
-                      src="/tuv-iso-45001-health-safety-certificate.jpg"
-                      alt="TUV ISO 45001"
-                      className="w-full h-auto rounded-lg mb-4"
-                    />
-                    <h4 className="text-lg font-bold text-center">
-                      ISO 45001 -{" "}
-                      {language === "sr"
-                        ? "Bezbednost i zdravlje na radu"
-                        : language === "en"
-                          ? "Occupational Health & Safety"
-                          : "Arbeitsschutz"}
-                    </h4>
-                  </Card>
-                </CarouselItem>
+                {certificatesData.map((certificate) => (
+                  <CarouselItem key={certificate.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                    <Card
+                      className="p-6 bg-background h-full cursor-pointer hover:shadow-lg transition-shadow"
+                      onClick={() => window.open(certificate.pdf[language], '_blank')}
+                    >
+                      <img
+                        src={certificate.image[language]}
+                        alt={certificate.title[language]}
+                        className="w-full h-auto rounded-lg mb-4"
+                      />
+                      <h4 className="text-lg font-bold text-center mb-2">
+                        {certificate.title[language]}
+                      </h4>
+                      <p className="text-sm text-muted-foreground text-center">
+                        {certificate.desc[language]}
+                      </p>
+                    </Card>
+                  </CarouselItem>
+                ))}
               </CarouselContent>
               <CarouselPrevious className="-left-12 md:-left-16" />
               <CarouselNext className="-right-12 md:-right-16" />
