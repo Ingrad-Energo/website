@@ -49,6 +49,8 @@ const translations = {
       gasDesc: "Distribucija i eksploatacija prirodnog gasa, gasne instalacije i priključci.",
       hvac: "Ventilacija i Klimatizacija",
       hvacDesc: "Projektovanje i montaža sistema ventilacije i klimatizacije za industrijske i komercijalne objekte.",
+      steel: "Čelične Konstrukcije",
+      steelDesc: "Projektovanje, izrada i montaža čeličnih konstrukcija za industrijske i komercijalne objekte.",
       learnMore: "Saznajte više →",
     },
     projects: {
@@ -148,6 +150,8 @@ const translations = {
       hvac: "Ventilation and Air Conditioning",
       hvacDesc:
         "Design and installation of ventilation and air conditioning systems for industrial and commercial buildings.",
+      steel: "Steel Structures",
+      steelDesc: "Design, fabrication, and installation of steel structures for industrial and commercial buildings.",
       learnMore: "Learn more →",
     },
     projects: {
@@ -245,6 +249,8 @@ const translations = {
       gasDesc: "Verteilung und Betrieb von Erdgas, Gasinstallationen und Anschlüsse.",
       hvac: "Lüftung und Klimatisierung",
       hvacDesc: "Planung und Installation von Lüftungs- und Klimatisierungssystemen für Industrie- und Gewerbegebäude.",
+      steel: "Stahlkonstruktionen",
+      steelDesc: "Planung, Herstellung und Montage von Stahlkonstruktionen für Industrie- und Gewerbegebäude.",
       learnMore: "Mehr erfahren →",
     },
     projects: {
@@ -573,7 +579,7 @@ export default function HomePage() {
               </div>
             </Card>
 
-            <Card className="overflow-hidden hover:shadow-lg transition-shadow lg:col-span-2">
+            <Card className="overflow-hidden hover:shadow-lg transition-shadow">
               <div className="aspect-video bg-gradient-to-br from-primary/15 to-accent/15 flex items-center justify-center">
                 <AirVent className="h-16 w-16 text-primary" />
               </div>
@@ -581,6 +587,21 @@ export default function HomePage() {
                 <h3 className="text-2xl font-bold mb-3">{t.services.hvac}</h3>
                 <p className="text-muted-foreground mb-4 leading-relaxed">{t.services.hvacDesc}</p>
                 <Link href="/services/hvac">
+                  <Button variant="ghost" className="px-0">
+                    {t.services.learnMore}
+                  </Button>
+                </Link>
+              </div>
+            </Card>
+
+            <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+              <div className="aspect-video bg-gradient-to-br from-accent/20 to-primary/10 flex items-center justify-center">
+                <Factory className="h-16 w-16 text-primary" />
+              </div>
+              <div className="p-8">
+                <h3 className="text-2xl font-bold mb-3">{t.services.steel}</h3>
+                <p className="text-muted-foreground mb-4 leading-relaxed">{t.services.steelDesc}</p>
+                <Link href="/services/steel">
                   <Button variant="ghost" className="px-0">
                     {t.services.learnMore}
                   </Button>
