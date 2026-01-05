@@ -130,15 +130,21 @@ export default function SteelPage() {
       </header>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-primary/10 to-accent/10">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="flex items-center justify-center mb-8">
-            <div className="h-20 w-20 rounded-full bg-primary/20 flex items-center justify-center">
-              <Factory className="h-12 w-12 text-primary" />
+      <section className="relative h-[60vh] min-h-[500px] overflow-hidden flex items-center">
+        <div className="absolute inset-0">
+          <img src="/steel-main.jpg" alt={t.title} className="w-full h-full object-cover blur-sm" />
+          <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/70" />
+        </div>
+        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="flex items-center justify-center mb-8">
+              <div className="h-24 w-24 rounded-full bg-white shadow-2xl flex items-center justify-center">
+                <Factory className="h-14 w-14 text-primary" />
+              </div>
             </div>
+            <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6 text-balance">{t.title}</h1>
+            <p className="text-xl text-white/90 max-w-3xl mx-auto text-pretty leading-relaxed">{t.overviewText}</p>
           </div>
-          <h1 className="text-4xl lg:text-5xl font-bold text-center mb-6 text-balance">{t.title}</h1>
-          <p className="text-xl text-center text-muted-foreground max-w-3xl mx-auto text-pretty">{t.overviewText}</p>
         </div>
       </section>
 

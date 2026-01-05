@@ -603,8 +603,14 @@ export default function HomePage() {
 
           <div className="grid lg:grid-cols-2 gap-8">
             <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="aspect-video bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
-                <Flame className="h-16 w-16 text-primary" />
+              <div className="aspect-video relative">
+                <img src="/consulting-main.jpg" alt="Engineering and Consulting" className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                  <div className="h-20 w-20 rounded-full bg-white shadow-xl flex items-center justify-center">
+                    <Flame className="h-10 w-10 text-primary" />
+                  </div>
+                </div>
               </div>
               <div className="p-8">
                 <h3 className="text-2xl font-bold mb-3">{t.services.engineering}</h3>
@@ -618,8 +624,14 @@ export default function HomePage() {
             </Card>
 
             <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="aspect-video bg-gradient-to-br from-accent/20 to-primary/5 flex items-center justify-center">
-                <Wind className="h-16 w-16 text-primary" />
+              <div className="aspect-video relative">
+                <img src="/engineering-main.jpg" alt="Thermotechnical Installations" className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                  <div className="h-20 w-20 rounded-full bg-white shadow-xl flex items-center justify-center">
+                    <Wind className="h-10 w-10 text-primary" />
+                  </div>
+                </div>
               </div>
               <div className="p-8">
                 <h3 className="text-2xl font-bold mb-3">{t.services.thermotechnical}</h3>
@@ -633,8 +645,14 @@ export default function HomePage() {
             </Card>
 
             <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="aspect-video bg-gradient-to-br from-primary/20 to-accent/10 flex items-center justify-center">
-                <Factory className="h-16 w-16 text-primary" />
+              <div className="aspect-video relative">
+                <img src="/thermal-energy-main.jpg" alt="Thermal Energy Facilities" className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                  <div className="h-20 w-20 rounded-full bg-white shadow-xl flex items-center justify-center">
+                    <Factory className="h-10 w-10 text-primary" />
+                  </div>
+                </div>
               </div>
               <div className="p-8">
                 <h3 className="text-2xl font-bold mb-3">{t.services.thermoEnergy}</h3>
@@ -648,8 +666,14 @@ export default function HomePage() {
             </Card>
 
             <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="aspect-video bg-gradient-to-br from-accent/20 to-primary/5 flex items-center justify-center">
-                <Flame className="h-16 w-16 text-primary" />
+              <div className="aspect-video relative">
+                <img src="/gas-main.jpg" alt="Natural Gas Distribution" className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                  <div className="h-20 w-20 rounded-full bg-white shadow-xl flex items-center justify-center">
+                    <Flame className="h-10 w-10 text-primary" />
+                  </div>
+                </div>
               </div>
               <div className="p-8">
                 <h3 className="text-2xl font-bold mb-3">{t.services.gas}</h3>
@@ -663,8 +687,14 @@ export default function HomePage() {
             </Card>
 
             <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="aspect-video bg-gradient-to-br from-primary/15 to-accent/15 flex items-center justify-center">
-                <AirVent className="h-16 w-16 text-primary" />
+              <div className="aspect-video relative">
+                <img src="/hvac-main.jpg" alt="Ventilation and Air Conditioning" className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                  <div className="h-20 w-20 rounded-full bg-white shadow-xl flex items-center justify-center">
+                    <AirVent className="h-10 w-10 text-primary" />
+                  </div>
+                </div>
               </div>
               <div className="p-8">
                 <h3 className="text-2xl font-bold mb-3">{t.services.hvac}</h3>
@@ -678,8 +708,14 @@ export default function HomePage() {
             </Card>
 
             <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="aspect-video bg-gradient-to-br from-accent/20 to-primary/10 flex items-center justify-center">
-                <Factory className="h-16 w-16 text-primary" />
+              <div className="aspect-video relative">
+                <img src="/steel-main.jpg" alt="Steel Structures" className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                  <div className="h-20 w-20 rounded-full bg-white shadow-xl flex items-center justify-center">
+                    <Factory className="h-10 w-10 text-primary" />
+                  </div>
+                </div>
               </div>
               <div className="p-8">
                 <h3 className="text-2xl font-bold mb-3">{t.services.steel}</h3>
