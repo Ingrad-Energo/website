@@ -4,10 +4,11 @@ import { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { Factory, Flame, Wrench, Wind, CheckCircle2, AirVent } from "lucide-react"
+import { Factory, Flame, Wrench, Wind, CheckCircle2, AirVent, Menu, Phone } from "lucide-react"
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel"
 import type { CarouselApi } from "@/components/ui/carousel"
 import { certificatesData } from "@/lib/certificates-data"
+import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet"
 
 const translations = {
   sr: {
@@ -334,6 +335,7 @@ export default function HomePage() {
   const [language, setLanguage] = useState<Language>("sr")
   const [projectApi, setProjectApi] = useState<CarouselApi>()
   const [certificateApi, setCertificateApi] = useState<CarouselApi>()
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const t = translations[language]
 
   const scrollToContact = () => {
@@ -384,12 +386,12 @@ export default function HomePage() {
                 {t.nav.contact}
               </Link>
             </div>
-            <div className="flex items-center gap-4">
-              <div className="flex items-center gap-1 border rounded-lg p-1">
+            <div className="flex items-center gap-2 md:gap-4">
+              <div className="flex items-center gap-0.5 md:gap-1 border rounded-lg p-0.5 md:p-1">
                 <Button
                   size="sm"
                   variant={language === "sr" ? "default" : "ghost"}
-                  className="h-8 px-3 text-xs"
+                  className="h-7 px-2 md:h-8 md:px-3 text-xs"
                   onClick={() => setLanguage("sr")}
                 >
                   SR
@@ -397,7 +399,7 @@ export default function HomePage() {
                 <Button
                   size="sm"
                   variant={language === "en" ? "default" : "ghost"}
-                  className="h-8 px-3 text-xs"
+                  className="h-7 px-2 md:h-8 md:px-3 text-xs"
                   onClick={() => setLanguage("en")}
                 >
                   EN
@@ -405,20 +407,86 @@ export default function HomePage() {
                 <Button
                   size="sm"
                   variant={language === "de" ? "default" : "ghost"}
-                  className="h-8 px-3 text-xs"
+                  className="h-7 px-2 md:h-8 md:px-3 text-xs"
                   onClick={() => setLanguage("de")}
                 >
                   DE
                 </Button>
               </div>
               <span className="text-sm text-muted-foreground hidden lg:inline">+381 15 893 310</span>
-              <Button size="sm" className="min-w-[160px]" onClick={scrollToContact}>
+              <Button size="sm" className="hidden md:inline-flex md:min-w-[140px] lg:min-w-[160px]" onClick={scrollToContact}>
                 {t.nav.contactUs}
+              </Button>
+              <Button
+                variant="ghost"
+                size="sm"
+                className="md:hidden"
+                onClick={() => setMobileMenuOpen(true)}
+              >
+                <Menu className="h-5 w-5" />
               </Button>
             </div>
           </nav>
         </div>
       </header>
+
+      {/* Mobile Menu */}
+      <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+        <SheetContent side="right" className="w-[85%] max-w-[320px] px-4 py-6">
+          <SheetHeader>
+            <SheetTitle>{language === "sr" ? "Meni" : language === "en" ? "Menu" : "Menü"}</SheetTitle>
+          </SheetHeader>
+
+          <nav className="flex flex-col gap-4 mt-8">
+            <Link
+              href="#why-choose"
+              className="text-lg font-medium py-3 border-b hover:text-primary transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {t.nav.about}
+            </Link>
+            <Link
+              href="#services"
+              className="text-lg font-medium py-3 border-b hover:text-primary transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {t.nav.services}
+            </Link>
+            <Link
+              href="#projects"
+              className="text-lg font-medium py-3 border-b hover:text-primary transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {t.nav.projects}
+            </Link>
+            <Link
+              href="#contact"
+              className="text-lg font-medium py-3 border-b hover:text-primary transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {t.nav.contact}
+            </Link>
+
+            <a
+              href="tel:+381158933310"
+              className="flex items-center gap-3 py-3 text-muted-foreground border-b"
+            >
+              <Phone className="h-5 w-5" />
+              <span>+381 15 893 310</span>
+            </a>
+
+            <Button
+              className="w-full mt-4"
+              onClick={() => {
+                setMobileMenuOpen(false)
+                scrollToContact()
+              }}
+            >
+              {t.nav.contactUs}
+            </Button>
+          </nav>
+        </SheetContent>
+      </Sheet>
 
       {/* Hero Section */}
       <section className="relative h-[80vh] overflow-hidden flex items-center">
