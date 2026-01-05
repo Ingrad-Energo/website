@@ -80,10 +80,15 @@ const translations = {
     },
     contact: {
       title: "Kontakt Informacije",
+      mainOffice: "Glavno Sedište",
+      branchOffice: "Filijala – Nemačka",
       address: "Adresa",
       addressValue: "Žikice Jovanovića 5\n15300 Loznica, Srbija",
+      addressValueGermany: "Weierstr. 65\n46149 Oberhausen, Nemačka",
       phone: "Telefon",
+      phoneGermany: "+49 151 1444 5972",
       email: "Email",
+      emailGermany: "ingradoberhausen@gmail.com",
       hours: "Radno Vreme",
       hoursValue: "Ponedeljak - Petak: 09:00 - 17:00",
       sendMessage: "Pošaljite Poruku",
@@ -181,10 +186,15 @@ const translations = {
     },
     contact: {
       title: "Contact Information",
+      mainOffice: "Main Office",
+      branchOffice: "Branch Office – Germany",
       address: "Address",
       addressValue: "Žikice Jovanovića 5\n15300 Loznica, Serbia",
+      addressValueGermany: "Weierstr. 65\n46149 Oberhausen, Germany",
       phone: "Phone",
+      phoneGermany: "+49 151 1444 5972",
       email: "Email",
+      emailGermany: "ingradoberhausen@gmail.com",
       hours: "Business Hours",
       hoursValue: "Monday - Friday: 09:00 - 17:00",
       sendMessage: "Send a Message",
@@ -281,10 +291,15 @@ const translations = {
     },
     contact: {
       title: "Kontaktinformationen",
+      mainOffice: "Hauptsitz",
+      branchOffice: "Niederlassung – Deutschland",
       address: "Adresse",
       addressValue: "Žikice Jovanovića 5\n15300 Loznica, Serbien",
+      addressValueGermany: "Weierstr. 65\n46149 Oberhausen, Deutschland",
       phone: "Telefon",
+      phoneGermany: "+49 151 1444 5972",
       email: "E-Mail",
+      emailGermany: "ingradoberhausen@gmail.com",
       hours: "Öffnungszeiten",
       hoursValue: "Montag - Freitag: 09:00 - 17:00",
       sendMessage: "Nachricht Senden",
@@ -670,25 +685,50 @@ export default function HomePage() {
             <div>
               <h2 className="text-3xl lg:text-4xl font-bold mb-8">{t.contact.title}</h2>
 
-              <div className="space-y-6">
+              <div className="space-y-8">
                 <div>
-                  <h3 className="font-semibold mb-2">{t.contact.address}</h3>
-                  <p className="text-muted-foreground whitespace-pre-line">{t.contact.addressValue}</p>
+                  <h3 className="text-xl font-bold mb-4">{t.contact.mainOffice}</h3>
+                  <div className="space-y-3">
+                    <div>
+                      <h4 className="font-semibold mb-1 text-sm">{t.contact.address}</h4>
+                      <p className="text-muted-foreground whitespace-pre-line">{t.contact.addressValue}</p>
+                    </div>
+
+                    <div>
+                      <h4 className="font-semibold mb-1 text-sm">{t.contact.phone}</h4>
+                      <p className="text-muted-foreground">+381 15 893 310</p>
+                    </div>
+
+                    <div>
+                      <h4 className="font-semibold mb-1 text-sm">{t.contact.email}</h4>
+                      <p className="text-muted-foreground">office@ingrad.biz</p>
+                    </div>
+
+                    <div>
+                      <h4 className="font-semibold mb-1 text-sm">{t.contact.hours}</h4>
+                      <p className="text-muted-foreground">{t.contact.hoursValue}</p>
+                    </div>
+                  </div>
                 </div>
 
-                <div>
-                  <h3 className="font-semibold mb-2">{t.contact.phone}</h3>
-                  <p className="text-muted-foreground">+381 15 893 310</p>
-                </div>
+                <div className="border-t pt-6">
+                  <h3 className="text-xl font-bold mb-4">{t.contact.branchOffice}</h3>
+                  <div className="space-y-3">
+                    <div>
+                      <h4 className="font-semibold mb-1 text-sm">{t.contact.address}</h4>
+                      <p className="text-muted-foreground whitespace-pre-line">{t.contact.addressValueGermany}</p>
+                    </div>
 
-                <div>
-                  <h3 className="font-semibold mb-2">{t.contact.email}</h3>
-                  <p className="text-muted-foreground">office@ingrad.biz</p>
-                </div>
+                    <div>
+                      <h4 className="font-semibold mb-1 text-sm">{t.contact.phone}</h4>
+                      <p className="text-muted-foreground">{t.contact.phoneGermany}</p>
+                    </div>
 
-                <div>
-                  <h3 className="font-semibold mb-2">{t.contact.hours}</h3>
-                  <p className="text-muted-foreground">{t.contact.hoursValue}</p>
+                    <div>
+                      <h4 className="font-semibold mb-1 text-sm">{t.contact.email}</h4>
+                      <p className="text-muted-foreground">{t.contact.emailGermany}</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

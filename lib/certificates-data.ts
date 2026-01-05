@@ -95,9 +95,9 @@ export const certificatesData: Certificate[] = [
   {
     id: "rev_scc_24",
     title: {
-      sr: "SCC Revizija 2024 - Bezbednost",
-      en: "SCC Review 2024 - Safety",
-      de: "SCC Revision 2024 - Sicherheit",
+      sr: "SCC 2024 - Bezbednost",
+      en: "SCC 2024 - Safety",
+      de: "SCC 2024 - Sicherheit",
     },
     desc: {
       sr: "Sertifikat bezbednosti i upravljanja rizicima",

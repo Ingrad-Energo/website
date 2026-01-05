@@ -20,7 +20,7 @@ export default function EngineeringPage() {
       services: "Naše Usluge",
       service1: "Projektovanje sistema grejanja",
       service1Desc:
-        "Izrada tehničke dokumentacije i projekata za sisteme centralnog grejanja, podnog grejanja i radiatorskog grejanja prilagođenih specifičnim potrebama objekta.",
+        "Izrada tehničke dokumentacije i projekata za sisteme centralnog grejanja, podnog grejanja i radijatorskog grejanja prilagođenih specifičnim potrebama objekta.",
       service2: "Ugradnja i montaža",
       service2Desc:
         "Stručna montaža kotlova, radijatora, cevnih instalacija i drugih komponenti sistema grejanja sa garancijom kvaliteta i usklađenosti sa standardima.",
