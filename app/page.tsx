@@ -22,7 +22,7 @@ const translations = {
     hero: {
       title: "Vaš Pouzdan Partner za Termoenergetska Rešenja",
       subtitle:
-        "Vodeci stručnjaci u inženjeringu termoenergetskih objekata, termotehničkih i gasnih instalacija sa višegodišnjim iskustvom.",
+        "Vodeći stručnjaci u inženjeringu termoenergetskih objekata, termotehničkih i gasnih instalacija sa višegodišnjim iskustvom.",
       learnMore: "Saznajte Više",
       ourProjects: "Naši Projekti",
     },
