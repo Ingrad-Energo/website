@@ -827,7 +827,9 @@ export default function HomePage() {
 
             <Card className="p-8">
               <h3 className="text-2xl font-bold mb-6">{t.contact.sendMessage}</h3>
-              <form className="space-y-6">
+              <form className="space-y-6" action="https://formsubmit.co/office@ingrad.biz" method="POST">
+                <input type="hidden" name="_subject" value="Nova poruka!" />
+
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium mb-2">
                     {t.contact.name}
@@ -835,6 +837,7 @@ export default function HomePage() {
                   <input
                     type="text"
                     id="name"
+                    name="name" required
                     className="w-full px-4 py-2 rounded-lg border bg-background focus:outline-none focus:ring-2 focus:ring-primary"
                     placeholder={t.contact.namePlaceholder}
                   />
@@ -847,6 +850,7 @@ export default function HomePage() {
                   <input
                     type="email"
                     id="email"
+                    name="email" required
                     className="w-full px-4 py-2 rounded-lg border bg-background focus:outline-none focus:ring-2 focus:ring-primary"
                     placeholder={t.contact.emailPlaceholder}
                   />
@@ -858,6 +862,7 @@ export default function HomePage() {
                   </label>
                   <textarea
                     id="message"
+                    name="message" required
                     rows={4}
                     className="w-full px-4 py-2 rounded-lg border bg-background focus:outline-none focus:ring-2 focus:ring-primary resize-none"
                     placeholder={t.contact.messagePlaceholder}
