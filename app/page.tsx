@@ -8,6 +8,7 @@ import { Factory, Flame, Wrench, Wind, CheckCircle2, AirVent, Menu, Phone } from
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel"
 import type { CarouselApi } from "@/components/ui/carousel"
 import { certificatesData } from "@/lib/certificates-data"
+import Image from "next/image"
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet"
 
 const translations = {
@@ -346,19 +347,19 @@ export default function HomePage() {
     {
       title: t.projects.project1Title,
       desc: t.projects.project1Desc,
-      image: "/modern-heating-system-industrial-facility.jpg",
+      image: "/projects/modern-heating-system-industrial-facility.jpg",
       tags: [t.projects.tagThermoEnergy, t.projects.tagEngineering],
     },
     {
       title: t.projects.project2Title,
       desc: t.projects.project2Desc,
-      image: "/gas-pipeline-distribution-network.jpg",
+      image: "/projects/gas-pipeline-distribution-network.jpg",
       tags: [t.projects.tagGas, t.projects.tagDistribution],
     },
     {
       title: t.projects.project3Title,
       desc: t.projects.project3Desc,
-      image: "/hvac-system-commercial-building-interior.jpg",
+      image: "/projects/hvac-system-commercial-building-interior.jpg",
       tags: [t.projects.tagThermotechnical, t.projects.tagHVAC],
     },
   ]
@@ -370,7 +371,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4 lg:px-8">
           <nav className="flex items-center justify-between h-16">
             <div className="flex items-center gap-2">
-              <img src="/logoingrad.png" alt="INGRAD ENERGO" className="h-10 w-auto" />
+              <Image src="/logoingrad.png" alt="INGRAD ENERGO" width={150} height={40} className="h-10 w-auto" />
             </div>
             <div className="hidden md:flex items-center gap-8">
               <Link href="#why-choose" className="text-sm font-medium hover:text-primary transition-colors">
@@ -491,10 +492,11 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="relative h-[80vh] overflow-hidden flex items-center">
         <div className="absolute inset-0">
-          <img
+          <Image
             src="/ntp.jpg"
             alt="Hero background"
-            className="w-full h-full object-cover"
+            fill
+            className="object-cover"
           />
           <div className="absolute inset-0 bg-black/50" />
         </div>
@@ -573,9 +575,11 @@ export default function HomePage() {
                       className="p-6 bg-background h-full cursor-pointer hover:shadow-lg transition-shadow"
                       onClick={() => window.open(certificate.pdf[language], '_blank')}
                     >
-                      <img
+                      <Image
                         src={certificate.image[language]}
                         alt={certificate.title[language]}
+                        width={800}
+                        height={600}
                         className="w-full h-auto rounded-lg mb-4"
                       />
                       <h4 className="text-lg font-bold text-center mb-2">
@@ -604,7 +608,7 @@ export default function HomePage() {
           <div className="grid lg:grid-cols-2 gap-8">
             <Card className="overflow-hidden hover:shadow-lg transition-shadow">
               <div className="aspect-video relative">
-                <img src="/consulting-main.jpg" alt="Engineering and Consulting" className="w-full h-full object-cover" />
+                <Image src="/consulting-main.jpg" alt="Engineering and Consulting" fill className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                   <div className="h-20 w-20 rounded-full bg-white shadow-xl flex items-center justify-center">
@@ -625,7 +629,7 @@ export default function HomePage() {
 
             <Card className="overflow-hidden hover:shadow-lg transition-shadow">
               <div className="aspect-video relative">
-                <img src="/engineering-main.jpg" alt="Thermotechnical Installations" className="w-full h-full object-cover" />
+                <Image src="/engineering-main.jpg" alt="Thermotechnical Installations" fill className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                   <div className="h-20 w-20 rounded-full bg-white shadow-xl flex items-center justify-center">
@@ -646,7 +650,7 @@ export default function HomePage() {
 
             <Card className="overflow-hidden hover:shadow-lg transition-shadow">
               <div className="aspect-video relative">
-                <img src="/thermal-energy-main.jpg" alt="Thermal Energy Facilities" className="w-full h-full object-cover" />
+                <Image src="/thermal-energy-main.jpg" alt="Thermal Energy Facilities" fill className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                   <div className="h-20 w-20 rounded-full bg-white shadow-xl flex items-center justify-center">
@@ -667,7 +671,7 @@ export default function HomePage() {
 
             <Card className="overflow-hidden hover:shadow-lg transition-shadow">
               <div className="aspect-video relative">
-                <img src="/gas-main.jpg" alt="Natural Gas Distribution" className="w-full h-full object-cover" />
+                <Image src="/gas-main.jpg" alt="Natural Gas Distribution" fill className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                   <div className="h-20 w-20 rounded-full bg-white shadow-xl flex items-center justify-center">
@@ -688,7 +692,7 @@ export default function HomePage() {
 
             <Card className="overflow-hidden hover:shadow-lg transition-shadow">
               <div className="aspect-video relative">
-                <img src="/hvac-main.jpg" alt="Ventilation and Air Conditioning" className="w-full h-full object-cover" />
+                <Image src="/hvac-main.jpg" alt="Ventilation and Air Conditioning" fill className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                   <div className="h-20 w-20 rounded-full bg-white shadow-xl flex items-center justify-center">
@@ -709,7 +713,7 @@ export default function HomePage() {
 
             <Card className="overflow-hidden hover:shadow-lg transition-shadow">
               <div className="aspect-video relative">
-                <img src="/steel-main.jpg" alt="Steel Structures" className="w-full h-full object-cover" />
+                <Image src="/steel-main.jpg" alt="Steel Structures" fill className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                   <div className="h-20 w-20 rounded-full bg-white shadow-xl flex items-center justify-center">
@@ -751,10 +755,11 @@ export default function HomePage() {
                   <CarouselItem key={idx} className="pl-2 md:pl-3 md:basis-1/2 lg:basis-1/3">
                     <Card className="overflow-hidden h-full">
                       <div className="aspect-video relative">
-                        <img
+                        <Image
                           src={project.image || "/placeholder.svg"}
                           alt={project.title}
-                          className="w-full h-full object-cover"
+                          fill
+                          className="object-cover"
                         />
                       </div>
                       <div className="p-4">
@@ -891,7 +896,7 @@ export default function HomePage() {
           <div className="grid md:grid-cols-4 gap-8">
             <div className="md:col-span-2">
               <div className="flex items-center gap-2 mb-4">
-                <img src="/logoingrad.png" alt="INGRAD ENERGO" className="h-10 w-auto" />
+                <Image src="/logoingrad.png" alt="INGRAD ENERGO" width={150} height={40} className="h-10 w-auto" />
               </div>
               <p className="text-sm text-muted-foreground max-w-md">{t.footer.description}</p>
             </div>
@@ -927,7 +932,7 @@ export default function HomePage() {
           </div>
 
           <div className="border-t mt-12 pt-8 text-center text-sm text-muted-foreground">
-            <p>© 2025 INGRAD ENERGO d.o.o. {t.footer.rights}</p>
+            <p>© {new Date().getFullYear()} INGRAD ENERGO d.o.o. {t.footer.rights}</p>
           </div>
         </div>
       </footer>
