@@ -8,6 +8,7 @@ import { Factory, Flame, Wrench, Wind, CheckCircle2, AirVent, Menu, Phone } from
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel"
 import type { CarouselApi } from "@/components/ui/carousel"
 import { certificatesData } from "@/lib/certificates-data"
+import { projectsData } from "@/lib/projects-data"
 import Image from "next/image"
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet"
 
@@ -343,26 +344,6 @@ export default function HomePage() {
     document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
   }
 
-  const projects = [
-    {
-      title: t.projects.project1Title,
-      desc: t.projects.project1Desc,
-      image: "/projects/modern-heating-system-industrial-facility.jpg",
-      tags: [t.projects.tagThermoEnergy, t.projects.tagEngineering],
-    },
-    {
-      title: t.projects.project2Title,
-      desc: t.projects.project2Desc,
-      image: "/projects/gas-pipeline-distribution-network.jpg",
-      tags: [t.projects.tagGas, t.projects.tagDistribution],
-    },
-    {
-      title: t.projects.project3Title,
-      desc: t.projects.project3Desc,
-      image: "/projects/hvac-system-commercial-building-interior.jpg",
-      tags: [t.projects.tagThermotechnical, t.projects.tagHVAC],
-    },
-  ]
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -751,20 +732,20 @@ export default function HomePage() {
               className="w-full"
             >
               <CarouselContent className="-ml-2 md:-ml-3">
-                {projects.map((project, idx) => (
+                {projectsData.map((project, idx) => (
                   <CarouselItem key={idx} className="pl-2 md:pl-3 md:basis-1/2 lg:basis-1/3">
                     <Card className="overflow-hidden h-full">
                       <div className="aspect-video relative">
                         <Image
                           src={project.image || "/placeholder.svg"}
-                          alt={project.title}
+                          alt={project.title[language]}
                           fill
                           className="object-cover"
                         />
                       </div>
                       <div className="p-4">
                         <div className="flex flex-wrap gap-1 mb-3">
-                          {project.tags.map((tag, tagIdx) => (
+                          {project.tags[language].map((tag, tagIdx) => (
                             <span
                               key={tagIdx}
                               className="inline-flex items-center rounded-full border px-2 py-0.5 text-xs font-medium"
@@ -773,8 +754,10 @@ export default function HomePage() {
                             </span>
                           ))}
                         </div>
-                        <h3 className="text-lg font-bold mb-2">{project.title}</h3>
-                        <p className="text-muted-foreground text-sm leading-relaxed">{project.desc}</p>
+                        <h3 className="text-lg font-bold mb-2">{project.title[language]}</h3>
+                        {project.desc[language] && (
+                          <p className="text-muted-foreground text-sm leading-relaxed">{project.desc[language]}</p>
+                        )}
                       </div>
                     </Card>
                   </CarouselItem>

@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image"
 import { Card } from "@/components/ui/card"
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel"
 import type { CarouselApi } from "@/components/ui/carousel"
@@ -50,10 +51,11 @@ export function FilteredProjectsCarousel({ language, filterTags, title, subtitle
                 <CarouselItem key={idx} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/2">
                   <Card className="overflow-hidden h-full">
                     <div className="aspect-video relative">
-                      <img
+                      <Image
                         src={project.image || "/placeholder.svg"}
                         alt={project.title[language]}
-                        className="w-full h-full object-cover"
+                        fill
+                        className="object-cover"
                       />
                     </div>
                     <div className="p-6">
@@ -68,7 +70,9 @@ export function FilteredProjectsCarousel({ language, filterTags, title, subtitle
                         ))}
                       </div>
                       <h3 className="text-xl font-bold mb-3">{project.title[language]}</h3>
-                      <p className="text-muted-foreground leading-relaxed">{project.desc[language]}</p>
+                      {project.desc[language] && (
+                        <p className="text-muted-foreground leading-relaxed">{project.desc[language]}</p>
+                      )}
                     </div>
                   </Card>
                 </CarouselItem>
